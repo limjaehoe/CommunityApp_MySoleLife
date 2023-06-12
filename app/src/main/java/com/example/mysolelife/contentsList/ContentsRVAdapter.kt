@@ -28,6 +28,8 @@ class ContentsRVAdapter(val context : Context, val items : ArrayList<ContentMode
         return items.size
 
 
+
+
     }
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
