@@ -21,6 +21,7 @@ class ContentListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_list)
 
+        //주석
         val database = Firebase.database
         val myRef = database.getReference("contents")
         val items = ArrayList<ContentModel>()
