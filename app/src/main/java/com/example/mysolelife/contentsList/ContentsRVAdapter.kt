@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mysolelife.R
@@ -14,10 +15,10 @@ import com.example.mysolelife.R
 
 class ContentsRVAdapter(val context : Context, val items : ArrayList<ContentModel>) : RecyclerView.Adapter<ContentsRVAdapter.Viewholder>() {
 
-    interface ItemClick {
-        fun onClick(view : View, position: Int)
-    }
-    var itemClick : ItemClick? = null
+//    interface ItemClick {
+//        fun onClick(view : View, position: Int)
+//    }
+//    var itemClick : ItemClick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.content_rv_item, parent, false)
@@ -30,17 +31,22 @@ class ContentsRVAdapter(val context : Context, val items : ArrayList<ContentMode
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
 
-        if(itemClick != null){
-            holder.itemView.setOnClickListener {
-                itemClick?.onClick(it, position)
-            }
-        }
+//        if(itemClick != null){
+//            holder.itemView.setOnClickListener {
+//                itemClick?.onClick(it, position)
+//            }
+//        }
 
         holder.bindItem(items[position])
     }
     class Viewholder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItem(item: ContentModel){
+
+
+            itemView.setOnClickListener {
+                //Toast.makeText(context, item.title, Toast.LENGTH_LONG)
+            }
 
             val contentTitle = itemView.findViewById<TextView>(R.id.textArea)
             val imageViewArea = itemView.findViewById<ImageView>(R.id.imageArea)
