@@ -57,8 +57,6 @@ class BookmarkFragment : Fragment() {
         getBookmarkData()
 
 
-
-
         rvAdapter = BookmarkRVAdapter(requireContext(), items, itemKeyList, bookmarkIdList)
         val rv : RecyclerView = binding.bookmarkRV
         rv.adapter = rvAdapter

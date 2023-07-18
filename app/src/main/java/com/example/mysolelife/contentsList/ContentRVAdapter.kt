@@ -92,6 +92,7 @@ class ContentRVAdapter(val context : Context,
                         .removeValue() 
 
                 }else{
+                    //북마크가 없을 때
                     FBRef.bookmarkRef
                         .child(FBAuth.getUid())
                         .child(key)
